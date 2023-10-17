@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@using Querystringproject.Models;
+
+@{
+    Record record = (Record)Model;
+    @record.Name
+
+    <br />
+    @record.Roll
+
+    <br />
+    @record.Mobile
+
+    <br />
+}
+
+@{
+    Record rec2 = (Record)Model;
+} 
+
+<div class="container">
+    <form action="UpdateRecord" method="post">
+        <div class="row">
+            <div class="col-4">
+        <label for="name"> Name</label>
+        <input type="text" class="form-control" name="name" value=@rec2.Name />
+        </div>
+
+        <div class="col-4">
+        <label for="roll"> RollNo</label>
+                <input type="text" class="form-control" name="roll" value=@rec2.Roll />
+        </div>
+
+        <div class="col-4">
+            <label for="mobile">Mobile</label>
+                <input type="text" class="form-control" name="mobile" value=@rec2.Mobile />
+</div>
+        </div>     
+        <input type="submit" name="submit" value="Update" />
+
+    </form>
+</div>
+
+
+

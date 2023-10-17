@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@using Querystringproject.Models
+
+@model Record
+
+<div class="container">
+    @using (Html.BeginForm("AddedData","Record", HttpMethods.Post))
+    {
+                <div class="row">
+
+                    <div class="col-4">
+                @Html.Label("Enter Roll")
+                @Html.TextBoxFor(x=>x.Roll,new{@class="form-control",@id="roll",@placeholder="2546"})
+                    </div>
+
+                    <div class="col-4">
+                @Html.Label("Enter Name")
+                @Html.TextBoxFor(x=>x.Name,new{@class="form-control",@id="name",@placeholder="Nitin"})
+                    </div>
+
+                    <div class="col-4">
+                @Html.Label("Enter Mobile")
+                @Html.TextBoxFor(x=>x.Mobile,new{@class="form-control",@id="mobile",@placeholder="7894561234"})
+                    </div>
+
+                </div>
+                <input type="submit" name="submit"value="InsertData">
+    }
+</div>
